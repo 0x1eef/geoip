@@ -2,6 +2,7 @@ package geoip
 
 import (
 	"encoding/json"
+	"fmt"
 	"io"
 	"net/http"
 	"strings"
@@ -19,9 +20,17 @@ type Response struct {
 }
 
 const (
-	scheme = "https://"
-	host   = "clean.myip.wtf"
-	path   = "/json"
+	scheme  = "https://"
+	host    = "clean.myip.wtf"
+	path    = "/json"
+	version = "0.1.0"
+)
+
+var (
+	headers = map[string]string{
+		"Accept":     "application/json",
+		"User-Agent": fmt.Sprintf("geoip/%s", version),
+	}
 )
 
 func Lookup() (*Response, error) {
@@ -51,7 +60,9 @@ func build() (*http.Request, error) {
 	if req, err := http.NewRequest("GET", endpoint, nil); err != nil {
 		return nil, err
 	} else {
-		req.Header.Set("Accept", "application/json")
+		for k, v := range headers {
+			req.Header.Set(k, v)
+		}
 		return req, nil
 	}
 }
