@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"io"
 	"net/http"
+	"strings"
 )
 
 type Response struct {
@@ -17,27 +18,41 @@ type Response struct {
 	IsTorExit   bool   `json:"YourTorExit"`
 }
 
+const (
+	scheme = "https://"
+	host   = "clean.myip.wtf"
+	path   = "/json"
+)
+
 func Lookup() (*Response, error) {
-	req, err := buildRequest()
+	req, err := build()
 	if err != nil {
 		return nil, err
+	} else {
+		res, err := http.DefaultClient.Do(req)
+		if err != nil {
+			return nil, err
+		}
+		defer res.Body.Close()
+		body, err := io.ReadAll(res.Body)
+		if err != nil {
+			return nil, err
+		}
+		var r Response
+		err = json.Unmarshal(body, &r)
+		if err != nil {
+			return nil, err
+		}
+		return &r, nil
 	}
+}
 
-	res, err := http.DefaultClient.Do(req)
+func build() (*http.Request, error) {
+	endpoint := strings.Join([]string{scheme, host, path}, "")
+	req, err := http.NewRequest("GET", endpoint, nil)
 	if err != nil {
 		return nil, err
 	}
-	defer res.Body.Close()
-
-	body, err := io.ReadAll(res.Body)
-	if err != nil {
-		return nil, err
-	}
-
-	var r Response
-	err = json.Unmarshal(body, &r)
-	if err != nil {
-		return nil, err
-	}
-	return &r, nil
+	req.Header.Set("Accept", "application/json")
+	return req, nil
 }
