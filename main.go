@@ -25,8 +25,7 @@ const (
 )
 
 func Lookup() (*Response, error) {
-	req, err := build()
-	if err != nil {
+	if req, err := build(); err != nil {
 		return nil, err
 	} else {
 		res, err := http.DefaultClient.Do(req)
@@ -49,10 +48,10 @@ func Lookup() (*Response, error) {
 
 func build() (*http.Request, error) {
 	endpoint := strings.Join([]string{scheme, host, path}, "")
-	req, err := http.NewRequest("GET", endpoint, nil)
-	if err != nil {
+	if req, err := http.NewRequest("GET", endpoint, nil); err != nil {
 		return nil, err
+	} else {
+		req.Header.Set("Accept", "application/json")
+		return req, nil
 	}
-	req.Header.Set("Accept", "application/json")
-	return req, nil
 }
