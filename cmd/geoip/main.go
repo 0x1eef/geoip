@@ -1,14 +1,16 @@
 package main
 
 import (
+	"fmt"
+	"os"
+
 	"github.com/0x1eef/geoip"
 )
 
 func main() {
-	res, err := geoip.Lookup()
-	if err != nil {
-		panic(err)
+	if res, err := geoip.Lookup(); err != nil {
+		fmt.Fprintf(os.Stderr, "error: %v\n", err)
 	} else {
-		println(res.IPAddress)
+		fmt.Println(res.IPAddress)
 	}
 }
