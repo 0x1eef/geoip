@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	"strings"
 )
 
 type Response struct {
@@ -20,7 +19,7 @@ type Response struct {
 }
 
 const (
-	scheme  = "https://"
+	scheme  = "https"
 	host    = "clean.myip.wtf"
 	path    = "/json"
 	version = "0.1.0"
@@ -56,7 +55,7 @@ func Lookup() (*Response, error) {
 }
 
 func build() (*http.Request, error) {
-	endpoint := strings.Join([]string{scheme, host, path}, "")
+	endpoint := fmt.Sprintf("%s://%s%s", scheme, host, path)
 	if req, err := http.NewRequest("GET", endpoint, nil); err != nil {
 		return nil, err
 	} else {
