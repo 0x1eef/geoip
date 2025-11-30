@@ -21,7 +21,10 @@ func main() {
   if err != nil {
     panic(err)
   } else {
-    fmt.Println(res)
+    fmt.Printf("%-7s %20s\n", "IP", res.IPAddress)
+    fmt.Printf("%-7s %20s\n", "ISP", res.ISP)
+    fmt.Printf("%-7s %20s\n", "City", res.City)
+    fmt.Printf("%-7s %20s\n", "Country", res.Country)
   }
 }
 ```
