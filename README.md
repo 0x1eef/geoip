@@ -11,21 +11,21 @@ service [clean.myip.wtf](https://clean.myip.wtf).
 package main
 
 import (
-  "fmt"
+	"fmt"
+	"os"
 
-  "github.com/0x1eef/geoip"
+	"github.com/0x1eef/geoip"
 )
 
 func main() {
-  res, err := geoip.Lookup()
-  if err != nil {
-    panic(err)
-  } else {
-    fmt.Printf("%-7s %20s\n", "IP", res.IPAddress)
-    fmt.Printf("%-7s %20s\n", "ISP", res.ISP)
-    fmt.Printf("%-7s %20s\n", "City", res.City)
-    fmt.Printf("%-7s %20s\n", "Country", res.Country)
-  }
+	if res, err := geoip.Lookup(); err != nil {
+		fmt.Fprintf(os.Stderr, "error: %v\n", err)
+	} else {
+		fmt.Printf("%-7s %35s\n", "IP", res.IPAddress)
+		fmt.Printf("%-7s %35s\n", "ISP", res.ISP)
+		fmt.Printf("%-7s %35s\n", "City", res.City)
+		fmt.Printf("%-7s %35s\n", "Country", res.Country)
+	}
 }
 ```
 
