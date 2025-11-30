@@ -9,7 +9,7 @@ import (
 
 func main() {
 	if res, err := geoip.Lookup(); err != nil {
-		fmt.Fprintf(os.Stderr, "error: %v\n", err)
+		fmt.Fprintf(os.Stderr, "geoip: %v\n", err)
 	} else {
 		fmt.Printf("%-7s %35s\n", "IP", res.IPAddress)
 		fmt.Printf("%-7s %35s\n", "ISP", res.ISP)
