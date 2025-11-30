@@ -14,7 +14,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/0x1eef/geoip"
+	"github.com/0x1eef/geoip/pkg/geoip"
 )
 
 func main() {
