@@ -29,6 +29,13 @@ func main() {
 }
 ```
 
+## Demo
+
+<details>
+  <summary>Play</summary>
+  <img src="demo.gif" alt="demo" />
+</details>
+
 ## License
 
 [BSD Zero Clause](https://choosealicense.com/licenses/0bsd/)
