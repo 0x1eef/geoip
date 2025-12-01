@@ -1,9 +1,42 @@
 ## About
 
-The myip library is a Go library and application that provides a simple
-interface for obtaining your public IP address, geographical location,
-and other related information. The library uses the free-to-use HTTP
-service [clean.myip.wtf](https://clean.myip.wtf).
+The myip utility provides a simple command-line interface for obtaining your
+public IP address, geographical location, and other related information. The
+utility uses the free-to-use HTTP service
+[clean.myip.wtf](https://clean.myip.wtf).
+
+## Features
+
+* Retrieve public IP address
+* Retrieve the following information associated with an IP address:
+	* Hostname
+	* Internet Service Provider (ISP)
+	* City
+	* Country
+
+# Install
+
+#### Binaries
+
+Prebuilt binaries are made available via [GItHub actions](https://github.com/0x1eef/myip/actions/runs/19806477120):
+
+* [myip-windows-amd64 (v0.2.0)](https://github.com/0x1eef/myip/actions/runs/19806477120/artifacts/4718983018)
+* [myip-linux-amd64 (v0.2.0)](https://github.com/0x1eef/myip/actions/runs/19806477120/artifacts/4718980945)
+* [myip-darwin-amd64 (v0.2.0)](https://github.com/0x1eef/myip/actions/runs/19806477120/artifacts/4718980702)
+* [myip-freebsd-amd64 (v0.2.0)](https://github.com/0x1eef/myip/actions/runs/19806477120/artifacts/4718985996)
+
+#### Package
+
+    user@localhost$ go install github.com/0x1eef/myip/cmd/myip@latest
+    user@localhost$ ~/go/bin/myip golang.go
+
+#### Source
+
+    user@localhost$ git clone https://github.com/0x1eef/myip.git
+    user@localhost$ cd myip
+    user@localhost$ make build
+    user@localhost$ ./bin/myip golang.go
+
 
 ## Example
 
