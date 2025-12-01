@@ -9,11 +9,14 @@ import (
 )
 
 var (
+	showHelp		bool
 	showVersion bool
 )
 
 func main() {
-	if showVersion {
+	if showHelp {
+		flag.Usage()
+	} else if showVersion {
 		fmt.Printf("myip: v%s\n", myip.Version)
 	} else {
 		if res, err := myip.Lookup(); err != nil {
@@ -28,6 +31,7 @@ func main() {
 }
 
 func init() {
+	flag.BoolVar(&showHelp, "h", false, "Show help information")
 	flag.BoolVar(&showVersion, "v", false, "Show version information")
 	flag.Parse()
 }
