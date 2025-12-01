@@ -1,6 +1,6 @@
 ## About
 
-The geoip library is a Go library and application that provides a simple
+The myip library is a Go library and application that provides a simple
 interface for obtaining your public IP address, geographical location,
 and other related information. The library uses the free-to-use HTTP
 service [clean.myip.wtf](https://clean.myip.wtf).
@@ -14,12 +14,12 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/0x1eef/geoip/pkg/geoip"
+	"github.com/0x1eef/myip/pkg/myip"
 )
 
 func main() {
-	if res, err := geoip.Lookup(); err != nil {
-		fmt.Fprintf(os.Stderr, "geoip: %v\n", err)
+	if res, err := myip.Lookup(); err != nil {
+		fmt.Fprintf(os.Stderr, "myip: %v\n", err)
 	} else {
 		fmt.Printf("%-7s %35s\n", "IP", res.IPAddress)
 		fmt.Printf("%-7s %35s\n", "ISP", res.ISP)
