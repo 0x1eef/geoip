@@ -22,13 +22,13 @@ const (
 	scheme  = "https"
 	host    = "clean.myip.wtf"
 	path    = "/json"
-	version = "0.1.0"
+	Version = "0.1.0"
 )
 
 var (
 	headers = map[string]string{
 		"Accept":     "application/json",
-		"User-Agent": fmt.Sprintf("myip/%s", version),
+		"User-Agent": fmt.Sprintf("myip/%s", Version),
 	}
 )
 

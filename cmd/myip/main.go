@@ -1,21 +1,20 @@
 package main
 
 import (
-	"fmt"
 	"flag"
+	"fmt"
 	"os"
 
 	"github.com/0x1eef/myip/pkg/myip"
 )
 
 var (
-	version = "0.1.0"
 	showVersion bool
 )
 
 func main() {
 	if showVersion {
-		fmt.Printf("myip: v%s\n", version)
+		fmt.Printf("myip: v%s\n", myip.Version)
 	} else {
 		if res, err := myip.Lookup(); err != nil {
 			fmt.Fprintf(os.Stderr, "myip: %v\n", err)
