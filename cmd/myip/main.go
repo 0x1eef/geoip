@@ -22,12 +22,30 @@ func main() {
 		if res, err := myip.Lookup(); err != nil {
 			fmt.Fprintf(os.Stderr, "myip: %v\n", err)
 		} else {
-			fmt.Printf("%-7s %35s\n", "IP", res.IPAddress)
-			fmt.Printf("%-7s %35s\n", "ISP", res.ISP)
-			fmt.Printf("%-7s %35s\n", "City", res.City)
-			fmt.Printf("%-7s %35s\n", "Country", res.Country)
+			length := padding(res)
+			fmt.Printf("%-8s %*s\n", "IP", length, res.IPAddress)
+			fmt.Printf("%-8s %*s\n", "Hostname", length, res.Hostname)
+			fmt.Printf("%-8s %*s\n", "ISP", length, res.ISP)
+			fmt.Printf("%-8s %*s\n", "City", length, res.City)
+			fmt.Printf("%-8s %*s\n", "Country", length, res.Country)
 		}
 	}
+}
+
+func padding(res *myip.Response) int {
+	base := 8
+	lenx := 0
+	parts := []string{
+		res.IPAddress, res.Hostname,
+		res.ISP, res.City,
+		res.Country,
+	}
+	for _, part := range parts {
+		if len(part) > lenx {
+			lenx = len(part)
+		}
+	}
+	return lenx + base
 }
 
 func init() {

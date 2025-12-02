@@ -40,10 +40,11 @@ Prebuilt binaries are made available via [GItHub actions](https://github.com/0x1
 #### Basics
 
     user@localhost$ myip
-    IP                           169.150.198.74
-    ISP                        Datacamp Limited
-    City                              São Paulo
-    Country                              Brazil
+    IP                                  169.150.198.74
+    Hostname         unn-169-150-198-74.datapacket.com
+    ISP                               Datacamp Limited
+    City                                     São Paulo
+    Country                                     Brazil
 
 ## License
 
