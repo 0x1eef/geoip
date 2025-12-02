@@ -46,6 +46,12 @@ Prebuilt binaries are made available via [GItHub actions](https://github.com/0x1
     City                                     São Paulo
     Country                                     Brazil
 
+## Sources
+
+* [github.com/@0x1eef](https://github.com/0x1eef/myip)
+* [gitlab.com/@0x1eef](https://gitlab.com/0x1eef/myip)
+* [hardenedbsd.org/@0x1eef](https://hardenedbsd.org/@0x1eef/myip)
+
 ## License
 
 [BSD Zero Clause](https://choosealicense.com/licenses/0bsd/)
