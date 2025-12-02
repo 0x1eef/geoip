@@ -33,7 +33,7 @@ Prebuilt binaries are made available via [GItHub actions](https://github.com/0x1
     user@localhost$ git clone https://github.com/0x1eef/myip.git
     user@localhost$ cd myip
     user@localhost$ make build
-    user@localhost$ ./bin/myip golang.go
+    user@localhost$ ./bin/myip
 
 
 ## License

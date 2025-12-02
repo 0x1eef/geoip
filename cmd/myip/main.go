@@ -9,7 +9,7 @@ import (
 )
 
 var (
-	showHelp		bool
+	showHelp    bool
 	showVersion bool
 )
 
