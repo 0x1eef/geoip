@@ -35,6 +35,18 @@ Prebuilt binaries are made available via [GItHub actions](https://github.com/0x1
     user@localhost$ make build
     user@localhost$ ./bin/myip
 
+## Usage
+
+#### Basics
+
+The following examples demonstrate how to retrieve your
+public IP address with the `myip` utility:
+
+    user@localhost$ myip
+    IP                           169.150.198.74
+    ISP                        Datacamp Limited
+    City                              São Paulo
+    Country                              Brazil
 
 ## License
 
