@@ -26,7 +26,7 @@ Prebuilt binaries are made available via [GitHub actions](https://github.com/0x1
 #### Package
 
     user@localhost$ go install github.com/0x1eef/myip/cmd/myip@latest
-    user@localhost$ ~/go/bin/myip golang.go
+    user@localhost$ ~/go/bin/myip
 
 #### Source
 
