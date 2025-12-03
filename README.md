@@ -16,7 +16,7 @@ utility uses the free-to-use HTTP service
 
 #### Binaries
 
-Prebuilt binaries are made available via [GItHub actions](https://github.com/0x1eef/myip/actions/runs/19806477120):
+Prebuilt binaries are made available via [GitHub actions](https://github.com/0x1eef/myip/actions/runs/19806477120):
 
 * [myip-windows-amd64 (v0.2.0)](https://github.com/0x1eef/myip/actions/runs/19806477120/artifacts/4718983018)
 * [myip-linux-amd64 (v0.2.0)](https://github.com/0x1eef/myip/actions/runs/19806477120/artifacts/4718980945)
