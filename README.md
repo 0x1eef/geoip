@@ -2,8 +2,9 @@
 
 The myip utility provides a simple command-line interface for obtaining your
 public IP address, geographical location, and other related information. The
-utility uses the free-to-use HTTP service
-[clean.myip.wtf](https://clean.myip.wtf).
+utility uses the privacy-focused and free-to-use HTTP service known as
+[clean.myip.wtf](https://clean.myip.wtf) to fetch information about
+your IP address.
 
 ## Features
 
