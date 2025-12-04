@@ -19,10 +19,10 @@ your IP address.
 
 Prebuilt binaries are made available via [GitHub actions](https://github.com/0x1eef/myip/actions/runs/19806477120):
 
-* [myip-windows-amd64 (v0.2.0)](https://github.com/0x1eef/myip/actions/runs/19806477120/artifacts/4718983018)
-* [myip-linux-amd64 (v0.2.0)](https://github.com/0x1eef/myip/actions/runs/19806477120/artifacts/4718980945)
-* [myip-darwin-amd64 (v0.2.0)](https://github.com/0x1eef/myip/actions/runs/19806477120/artifacts/4718980702)
-* [myip-freebsd-amd64 (v0.2.0)](https://github.com/0x1eef/myip/actions/runs/19806477120/artifacts/4718985996)
+* [myip-windows-amd64 (v0.1.0)](https://github.com/0x1eef/myip/actions/runs/19806477120/artifacts/4718983018)
+* [myip-linux-amd64 (v0.1.0)](https://github.com/0x1eef/myip/actions/runs/19806477120/artifacts/4718980945)
+* [myip-darwin-amd64 (v0.1.0)](https://github.com/0x1eef/myip/actions/runs/19806477120/artifacts/4718980702)
+* [myip-freebsd-amd64 (v0.1.0)](https://github.com/0x1eef/myip/actions/runs/19806477120/artifacts/4718985996)
 
 #### Package
 
